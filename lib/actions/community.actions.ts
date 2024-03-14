@@ -37,9 +37,6 @@ export async function createCommunity(
 
     const createdCommunity = await newCommunity.save();
 
-    {console.log(newCommunity)}
-    {console.log(createdCommunity)}
-
     // Update User model
     user.communities.push(createdCommunity._id);
     await user.save();
